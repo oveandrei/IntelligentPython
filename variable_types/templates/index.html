@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 3px;
+            white-space: pre;
+        }
+        .output {
+            color: #007700;
+            font-weight: bold;
+            white-space: pre;
+        }
+        .section-title {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <div class="button-container">
+        <a href="/text-sequence-type" class="button">Text Sequence Type — str</a>
+        <a href="/string-methods" class="button">String Methods</a>
+        <a href="/f-strings" class="button">F-Strings</a>
+        <a href="/format-string-syntax" class="button">Format String Syntax</a>
+        <a href="/print-style-formatting" class="button">Print-F Style String Formatting</a>
+        <a href="/python-variable-types" class="button">Python Variable Types</a>
+    </div>
+    {% for example in examples %}
+        {% if loop.first or examples[loop.index0 - 1].section != example.section %}
+            <div class="section-title">{{ example.section }}</div>
+        {% endif %}
+        <div class="example">
+            <p><strong>Description:</strong> {{ example.description }}</p>
+            <p><strong>Code:</strong> <span class="code">{{ example.code }}</span></p>
+            <p><strong>Output:</strong> <span class="output">{{ example.output }}</span></p>
+        </div>
+    {% endfor %}
+</body>
+</html>

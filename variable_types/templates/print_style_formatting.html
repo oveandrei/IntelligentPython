@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 3px;
+        }
+        .output {
+            color: #007700;
+            font-weight: bold;
+            white-space: pre;
+        }
+        .conversion-types {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+        .conversion-types ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .conversion-types li {
+            margin-bottom: 5px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<!-- Buttons for navigation -->
+    <h1>{{ title }}</h1>
+    <div class="button-container">
+        <a href="/text-sequence-type" class="button">Text Sequence Type — str</a>
+        <a href="/string-methods" class="button">String Methods</a>
+        <a href="/f-strings" class="button">F-Strings</a>
+        <a href="/format-string-syntax" class="button">Format String Syntax</a>
+        <a href="/print-style-formatting" class="button">Print-F Style String Formatting</a>
+        <a href="/python-variable-types" class="button">Python Variable Types</a>
+    </div>
+    {% for example in examples %}
+    <div class="example">
+        <p><strong>Description:</strong> {{ example.description }}</p>
+        <p><strong>Code:</strong> <span class="code">{{ example.code }}</span></p>
+        <p><strong>Output:</strong> <span class="output">{{ example.output }}</span></p>
+    </div>
+    {% endfor %}
+
+    <!-- Conversion Types List -->
+    <div class="conversion-types">
+        <h2>Conversion Types</h2>
+        <ul>
+            <li><strong>%d</strong>: Signed integer decimal.</li>
+            <li><strong>%i</strong>: Signed integer decimal.</li>
+            <li><strong>%o</strong>: Signed octal value.</li>
+            <li><strong>%u</strong>: Obsolete type (identical to %d).</li>
+            <li><strong>%x</strong>: Signed hexadecimal (lowercase).</li>
+            <li><strong>%X</strong>: Signed hexadecimal (uppercase).</li>
+            <li><strong>%e</strong>: Floating-point exponential format (lowercase).</li>
+            <li><strong>%E</strong>: Floating-point exponential format (uppercase).</li>
+            <li><strong>%f</strong>: Floating-point decimal format.</li>
+            <li><strong>%F</strong>: Floating-point decimal format.</li>
+            <li><strong>%g</strong>: Floating-point format (lowercase exponential or decimal).</li>
+            <li><strong>%G</strong>: Floating-point format (uppercase exponential or decimal).</li>
+            <li><strong>%c</strong>: Single character (integer or single character string).</li>
+            <li><strong>%r</strong>: String (uses repr()).</li>
+            <li><strong>%s</strong>: String (uses str()).</li>
+            <li><strong>%a</strong>: String (uses ascii()).</li>
+            <li><strong>%%</strong>: A literal '%' character.</li>
+        </ul>
+    </div>
+
+</html>
